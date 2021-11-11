@@ -1,3 +1,6 @@
+import { settings } from "./settings.js";
+
+
 const btn = document.querySelector(".btn")
 
 
@@ -6,8 +9,8 @@ btn.addEventListener("click", () => {
 })
 
 async function sendApiRequest() {
-    let API_Key = "ZgMa88aepXb90U6kQUSMc9jNMNfo8dBevhxqSBVy"
-    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_Key}`);
+    //let API_Key = "ZgMa88aepXb90U6kQUSMc9jNMNfo8dBevhxqSBVy"
+    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${settings}`);
     console.log(response)
     let data = await response.json()
     console.log(data)
